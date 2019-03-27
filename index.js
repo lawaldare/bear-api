@@ -7,7 +7,8 @@ const mongoose = require('mongoose');
 const app = express();
 
 //connect to mongodb
-mongoose.connect('mongodb://node:node@novus.modulusmongo.net:27017/Iganiq8o');
+mongoose.connect('mongodb://localhost/bearworld');
+mongoose.Promise = global.Promise;
 
 //configure app to use body-parser
 app.use(bodyParser.json());
