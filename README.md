@@ -12,7 +12,7 @@ Using the new Express 4.0 Router to build an API
 
 - Clone the repo: `https://github.com/lawaldare/bear-api.git`
 - Install dependencies: `npm install`
-- Start the server: `node server.js`
+- Start the server: `node index.js`
 
 ## Testing the API
 Test your API using [Postman](https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop)
