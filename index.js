@@ -19,7 +19,7 @@ app.use('/api', routes);
 
 //error handling middleware
 app.use(function(err, req, res, next) {
-	res.status(422).send({ error: err.message });
+	res.status(422).send({ err: err.message });
 });
 
 //listening for requests

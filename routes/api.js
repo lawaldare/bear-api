@@ -3,10 +3,15 @@ const router = express.Router();
 const Bear = require('../models/bears');
 
 //get a bear from the db by the ID
-router.get('/bears', function(req, res, next) {
+router.get('/bears/:id', function(req, res, next) {
 	Bear.findById({ _id: req.param.id }).then(function(bear) {
 		res.send(bear);
 	});
+});
+
+//get all the list of bear from the database
+router.get('/bears', function(req, res, next) {
+	res.send(bear);
 });
 
 //add a new ninja to the db
