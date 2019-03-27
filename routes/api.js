@@ -1,36 +1,36 @@
 const express = require('express');
 const router = express.Router();
-const bear = require('../models/bears');
+const Bear = require('../models/bears');
 
-//get a list of ninjas from the db
+//get a list of bears from the db
 router.get('/bears', function(req, res, next) {
-	Ninja.find({ name: req.query.name }).then(function(ninja) {
-		res.send(ninja);
+	Bear.find({ name: req.query.name }).then(function(bear) {
+		res.send(bear);
 	});
 });
 
 //add a new ninja to the db
 router.post('/bears', function(req, res, next) {
-	Ninja.create(req.body)
-		.then(function(ninja) {
-			res.send(ninja);
+	Bear.create(req.body)
+		.then(function(bear) {
+			res.send(bear);
 		})
 		.catch(next);
 });
 
 //update a ninja in the db
 router.put('/bears/:id', function(req, res, next) {
-	Ninja.findByIdAndUpdate({ _id: req.params.id }, req.body).then(function() {
-		Ninja.findOne({ _id: req.params.id }).then(function(ninja) {
-			res.send(ninja);
+	Bear.findByIdAndUpdate({ _id: req.params.id }, req.body).then(function() {
+		Bear.findOne({ _id: req.params.id }).then(function(bear) {
+			res.send(bear);
 		});
 	});
 });
 
 //delete a ninja from the db
 router.delete('/bears/:id', function(req, res, next) {
-	Ninja.findByIdAndRemove({ _id: req.params.id }).then(function(ninja) {
-		res.send(ninja);
+	Bear.findByIdAndRemove({ _id: req.params.id }).then(function(bear) {
+		res.send(bear);
 	});
 });
 
