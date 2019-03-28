@@ -16,7 +16,7 @@ router.get('/bears/:id', (req, res, next) => {
 
 //get all the list of bear from the database
 router.get('/bears', (req, res, next) => {
-	Bear.find().then(
+	Bear.find().sort('name').then(
 		(bear) => {
 			res.send({ bear });
 		},

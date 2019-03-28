@@ -4,10 +4,15 @@ var Schema = mongoose.Schema;
 var BearSchema = new Schema({
 	name: {
 		type: String,
-		required: true
+		required: true,
+		minlength: 5,
+		maxlength: 255
 	},
-	color: String
-
+	color: {
+		type: String,
+		required: true
+	}
+ 
 	//required: [ true, 'Name field is required' ]
 });
 

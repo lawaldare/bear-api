@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //initialize routes
-app.use('/api', routes);
+app.use('/api', routes); 
 
 //error handling middleware
 app.use(function(err, req, res, next) {
