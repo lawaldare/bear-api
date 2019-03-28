@@ -21,7 +21,7 @@ router.get('/bears', (req, res, next) => {
 			res.send({ bear });
 		},
 		(e) => {
-			res.status(400).send(e);
+			res.status(400).send(e.message);
 		}
 	);
 });
@@ -31,8 +31,9 @@ router.post('/bears', (req, res, next) => {
 	Bear.create(req.body)
 		.then((bear) => {
 			res.send(bear);
+		}, (err) => {
+			res.status(400).send(err.message);
 		})
-		.catch(next);
 });
 
 //update a ninja in the db
@@ -43,7 +44,7 @@ router.put('/bears/:id', (req, res, next) => {
 				res.send(bear);
 			},
 			(e) => {
-				res.status(400).send(e);
+				res.status(400).send(e.message);
 			}
 		);
 	});
@@ -53,6 +54,8 @@ router.put('/bears/:id', (req, res, next) => {
 router.delete('/bears/:id', (req, res, next) => {
 	Bear.findByIdAndRemove({ _id: req.params.id }).then((bear) => {
 		res.send(bear);
+	}, (e) => {
+		res.status(400).send(e.message);
 	});
 });
 
